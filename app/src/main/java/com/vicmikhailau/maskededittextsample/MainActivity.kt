@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
+import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
 
 import com.vicmikhailau.maskededittext.MaskedEditText
 import com.vicmikhailau.maskededittext.MaskedFormatter
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var mEdtMaskedCustom: MaskedEditText
     private lateinit var mEdtMasked: EditText
-    private var formatter: MaskedFormatter? = null
+    private lateinit var mImageView: ImageView
 
     // ===========================================================
     // Constructors
@@ -73,6 +75,10 @@ class MainActivity : AppCompatActivity() {
     private fun findViews() {
         mEdtMaskedCustom = findViewById(R.id.edt_masked_custom)
         mEdtMasked = findViewById(R.id.edt_masked)
+        mImageView = findViewById(R.id.imageView)
+        mImageView.setOnClickListener {
+            mEdtMasked.text.clear()
+        }
     }
 
     /**
@@ -84,17 +90,23 @@ class MainActivity : AppCompatActivity() {
      */
     private fun setMask(mask: String) {
         val formatter = MaskedFormatter(mask)
-        mEdtMasked.addTextChangedListener(InputTypeSwitcher(mEdtMasked, ::noMask))
+        mEdtMasked.addTextChangedListener(InputTypeSwitcher(mEdtMasked, mImageView, ::noMask))
         mEdtMasked.addTextChangedListener(MaskedWatcher(formatter, mEdtMasked, ::noMask))
         val s = formatter.formatString(mEdtMasked.text.toString()).unMaskedString
     }
 
     private class InputTypeSwitcher(
             private val editText: EditText,
+            private val imageView: ImageView,
             private val noMask: (text: String) -> Boolean
     ) : TextWatcher {
         override fun afterTextChanged(s: Editable?) {
             val value = s.toString()
+            if (s.isNullOrEmpty()) {
+                imageView.visibility = View.GONE
+            } else {
+                imageView.visibility = View.VISIBLE
+            }
             if (noMask(value)) {
                 editText.inputType = InputType.TYPE_NULL
             } else {
