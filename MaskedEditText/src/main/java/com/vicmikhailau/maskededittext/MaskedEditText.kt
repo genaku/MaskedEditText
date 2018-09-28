@@ -1,11 +1,8 @@
 package com.vicmikhailau.maskededittext
 
 import android.content.Context
-import android.content.res.TypedArray
 import android.support.v7.widget.AppCompatEditText
 import android.util.AttributeSet
-
-import com.vicmikhailau.maskededittext.formattedString.IFormattedString
 
 class MaskedEditText(context: Context, attrs: AttributeSet) : AppCompatEditText(context, attrs) {
 
@@ -17,9 +14,8 @@ class MaskedEditText(context: Context, attrs: AttributeSet) : AppCompatEditText(
 
     val unMaskedText: String
         get() {
-            val currentText = text?.toString() ?: ""
-            val formattedString = mMaskedFormatter!!.formatString(currentText)
-            return formattedString.unMaskedString
+            val currentText = text?.toString() ?: return ""
+            return mMaskedFormatter?.formatString(currentText)?.unMaskedString ?: ""
         }
 
     init {
