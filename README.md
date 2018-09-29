@@ -3,11 +3,11 @@
 
 It allows you to add a mask to EditText
 
-![GIF of its use](https://github.com/VicMikhailau/MaskedEditText/blob/master/resources/masked_edit_text.gif)
+![GIF of its use](https://github.com/genaku/MaskedEditText/blob/master/resources/masked_edit_text.gif)
 
 # Version
 
-2.0.4
+2.1.0
 
 # Installation
 
@@ -15,7 +15,7 @@ To use this library in your android project, just simply add the following depen
 
 ```sh
 dependencies {
-    compile 'com.vicmikhailau:MaskedEditText:2.0.4'
+    compile 'com.genaku:MaskedEditText:2.1.0'
 }
 ```
 
@@ -24,7 +24,7 @@ dependencies {
 Just add in xml custom MaskedEditText with attribute app:mask="your_mask" like below:
 
 ```xml
-<com.vicmikhailau.maskededittext.MaskedEditText
+<com.genaku.maskededittext.MaskedEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:mask="your_mask" />
@@ -102,6 +102,7 @@ Ability to get unmasked text (text without mask) was added
 Initial version
 
 ## Licence
+Copyright 2018 Gennadiy Kuchergin
 Copyright 2016 Vic Mikhailau<br />
 <br />
 Licensed under the Apache License, Version 2.0 (the "License");<br />

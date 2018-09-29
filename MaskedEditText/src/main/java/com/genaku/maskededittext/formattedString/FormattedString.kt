@@ -1,6 +1,6 @@
-package com.vicmikhailau.maskededittext.formattedString
+package com.genaku.maskededittext.formattedString
 
-import com.vicmikhailau.maskededittext.Mask
+import com.genaku.maskededittext.Mask
 
 internal class FormattedString(mask: Mask, rawString: String) : AbstractFormattedString(mask, rawString) {
 

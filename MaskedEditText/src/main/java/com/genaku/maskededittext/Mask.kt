@@ -1,10 +1,9 @@
-package com.vicmikhailau.maskededittext
+package com.genaku.maskededittext
 
-import com.vicmikhailau.maskededittext.formattedString.FormattedString
-import com.vicmikhailau.maskededittext.formattedString.IFormattedString
-import com.vicmikhailau.maskededittext.maskCharacters.MaskCharacter
-
-import java.util.ArrayList
+import com.genaku.maskededittext.formattedString.FormattedString
+import com.genaku.maskededittext.formattedString.IFormattedString
+import com.genaku.maskededittext.maskCharacters.MaskCharacter
+import java.util.*
 
 class Mask() {
 

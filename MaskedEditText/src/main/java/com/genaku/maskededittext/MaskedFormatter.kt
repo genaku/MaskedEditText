@@ -1,6 +1,6 @@
-package com.vicmikhailau.maskededittext
+package com.genaku.maskededittext
 
-import com.vicmikhailau.maskededittext.formattedString.IFormattedString
+import com.genaku.maskededittext.formattedString.IFormattedString
 
 class MaskedFormatter internal constructor() {
 

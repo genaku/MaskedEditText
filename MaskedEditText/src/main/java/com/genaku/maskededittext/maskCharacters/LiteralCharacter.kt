@@ -1,4 +1,4 @@
-package com.vicmikhailau.maskededittext.maskCharacters
+package com.genaku.maskededittext.maskCharacters
 
 internal class LiteralCharacter(private var character: Char? = null) : MaskCharacter() {
 

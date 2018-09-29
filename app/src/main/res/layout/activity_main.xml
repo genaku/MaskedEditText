@@ -5,10 +5,10 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vicmikhailau.maskededittextsample.MainActivity">
+    tools:context="com.genaku.maskededittextsample.MainActivity">
 
 
-    <com.vicmikhailau.maskededittext.MaskedEditText
+    <com.genaku.maskededittext.MaskedEditText
         android:id="@+id/edt_masked_custom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
         tools:visibility="visible" />
 
-    <com.vicmikhailau.maskededittext.MaskedEditText
+    <com.genaku.maskededittext.MaskedEditText
         android:id="@+id/edt_masked_custom_sample"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

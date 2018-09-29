@@ -1,4 +1,4 @@
-package com.vicmikhailau.maskededittext
+package com.genaku.maskededittext
 
 import android.content.Context
 import android.support.v7.widget.AppCompatEditText

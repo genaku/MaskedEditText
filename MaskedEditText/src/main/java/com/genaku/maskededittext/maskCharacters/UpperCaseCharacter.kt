@@ -1,4 +1,4 @@
-package com.vicmikhailau.maskededittext.maskCharacters
+package com.genaku.maskededittext.maskCharacters
 
 internal class UpperCaseCharacter : MaskCharacter() {
 

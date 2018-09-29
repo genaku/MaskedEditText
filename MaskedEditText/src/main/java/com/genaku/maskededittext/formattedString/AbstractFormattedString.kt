@@ -1,6 +1,6 @@
-package com.vicmikhailau.maskededittext.formattedString
+package com.genaku.maskededittext.formattedString
 
-import com.vicmikhailau.maskededittext.Mask
+import com.genaku.maskededittext.Mask
 
 abstract class AbstractFormattedString(val mMask: Mask, val inputString: String) : IFormattedString {
 
@@ -20,4 +20,5 @@ abstract class AbstractFormattedString(val mMask: Mask, val inputString: String)
             toString().subSequence(startIndex, endIndex)
 
     override fun get(index: Int): Char = toString()[index]
+
 }

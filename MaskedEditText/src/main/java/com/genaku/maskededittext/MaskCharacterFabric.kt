@@ -1,6 +1,6 @@
-package com.vicmikhailau.maskededittext
+package com.genaku.maskededittext
 
-import com.vicmikhailau.maskededittext.maskCharacters.*
+import com.genaku.maskededittext.maskCharacters.*
 
 internal class MaskCharacterFabric {
 

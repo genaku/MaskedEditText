@@ -1,4 +1,4 @@
-package com.vicmikhailau.maskededittextsample
+package com.genaku.maskededittextsample
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -9,9 +9,9 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 
-import com.vicmikhailau.maskededittext.MaskedEditText
-import com.vicmikhailau.maskededittext.MaskedFormatter
-import com.vicmikhailau.maskededittext.MaskedWatcher
+import com.genaku.maskededittext.MaskedEditText
+import com.genaku.maskededittext.MaskedFormatter
+import com.genaku.maskededittext.MaskedWatcher
 
 class MainActivity : AppCompatActivity() {
 
@@ -103,15 +103,25 @@ class MainActivity : AppCompatActivity() {
         override fun afterTextChanged(s: Editable?) {
             val value = s.toString()
             if (s.isNullOrEmpty()) {
-                imageView.visibility = View.GONE
+                switchImageView(View.GONE)
             } else {
-                imageView.visibility = View.VISIBLE
+                switchImageView(View.VISIBLE)
             }
             if (noMask(value)) {
-                editText.inputType = InputType.TYPE_NULL
+                switchInputType(InputType.TYPE_NULL)
             } else {
-                editText.inputType = InputType.TYPE_CLASS_PHONE
+                switchInputType(InputType.TYPE_CLASS_PHONE)
             }
+        }
+
+        private fun switchInputType(type: Int) {
+            if (editText.inputType != type)
+                editText.inputType = type
+        }
+
+        private fun switchImageView(visibility: Int) {
+            if (imageView.visibility != visibility)
+                imageView.visibility = visibility
         }
 
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {

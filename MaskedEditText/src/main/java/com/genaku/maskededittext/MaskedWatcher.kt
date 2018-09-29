@@ -1,10 +1,10 @@
-package com.vicmikhailau.maskededittext
+package com.genaku.maskededittext
 
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 
-import com.vicmikhailau.maskededittext.formattedString.IFormattedString
+import com.genaku.maskededittext.formattedString.IFormattedString
 
 import java.lang.ref.WeakReference
 

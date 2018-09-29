@@ -1,4 +1,4 @@
-package com.vicmikhailau.maskededittext.formattedString
+package com.genaku.maskededittext.formattedString
 
 interface IFormattedString : CharSequence {
     val unMaskedString: String
