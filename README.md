@@ -1,4 +1,5 @@
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaskedEditText-green.svg?style=true)](https://android-arsenal.com/details/1/3659) [![Codewake](https://www.codewake.com/badges/ask_question.svg)](https://www.codewake.com/p/maskededittext)
+[![](https://jitpack.io/v/genaku/MaskedEditText.svg)](https://jitpack.io/#genaku/MaskedEditText)
+
 # MaskedEditText
 
 It allows you to add a mask to EditText
