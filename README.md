@@ -15,7 +15,7 @@ To use this library in your android project, just simply add the following depen
 
 ```sh
 dependencies {
-    compile 'com.genaku:MaskedEditText:2.1.0'
+    implementation 'com.genaku:MaskedEditText:2.1.0'
 }
 ```
 
