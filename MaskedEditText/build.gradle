@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion 28
@@ -17,6 +18,8 @@ android {
         }
     }
 }
+
+group='com.github.genaku'
 
 ext {
     support = "28.0.0"
