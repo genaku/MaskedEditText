@@ -1,6 +1,5 @@
 [![](https://jitpack.io/v/genaku/MaskedEditText.svg)](https://jitpack.io/#genaku/MaskedEditText)
 
-
 # MaskedEditText
 
 It allows you to add a mask to EditText
