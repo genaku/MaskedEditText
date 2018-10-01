@@ -33,19 +33,24 @@ class MaskedWatcher(
             value
         } else {
             val formattedString = getFormattedString(value)
-            setFormattedText(formattedString)
-            formattedString.toString()
+            if (formattedString != null) {
+                setFormattedText(formattedString)
+            }
+            formattedString?.toString() ?: ""
         }
     }
 
-    private fun getFormattedString(value: String): IFormattedString =
-            mMaskFormatter.get()!!.formatString(limitTextByLength(value))
+    private fun getFormattedString(value: String): IFormattedString? =
+            mMaskFormatter.get()?.formatString(limitTextByLength(value))
 
     private fun limitTextByLength(value: String): String =
-            if (value.length > oldFormattedValue.length && mMaskFormatter.get()!!.maskLength < value.length)
+            if (value.length > oldFormattedValue.length && maskFormatterLength < value.length)
                 oldFormattedValue
             else
                 value
+
+    private val maskFormatterLength =
+            mMaskFormatter.get()?.maskLength ?: 0
 
     private fun setFormattedText(formattedString: IFormattedString) {
         val editText = mEditText.get() ?: return
@@ -62,8 +67,8 @@ class MaskedWatcher(
             deltaLength < 0 -> newCursorPosition -= 1
             else -> {
                 val mask = mMaskFormatter.get()?.mMask
-                newCursorPosition = Math.max(1, Math.min(newCursorPosition, mMaskFormatter.get()!!.maskLength))
-                if (mask!![newCursorPosition - 1].isPrepopulate)
+                newCursorPosition = Math.max(1, Math.min(newCursorPosition, maskFormatterLength))
+                if (mask?.get(newCursorPosition - 1)?.isPrepopulate == true)
                     newCursorPosition -= 1
             }
         }

@@ -1,6 +1,7 @@
 package com.genaku.maskededittextsample
 
 import android.os.Bundle
+import android.support.design.widget.TextInputEditText
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.InputType
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mEdtMaskedCustom: MaskedEditText
     private lateinit var mEdtMasked: EditText
     private lateinit var mImageView: ImageView
+    private lateinit var mTvPhone: TextInputEditText
 
     // ===========================================================
     // Constructors
@@ -76,8 +78,9 @@ class MainActivity : AppCompatActivity() {
         mEdtMaskedCustom = findViewById(R.id.edt_masked_custom)
         mEdtMasked = findViewById(R.id.edt_masked)
         mImageView = findViewById(R.id.imageView)
+        mTvPhone = findViewById(R.id.tvPhone)
         mImageView.setOnClickListener {
-            mEdtMasked.text.clear()
+            mTvPhone.text?.clear()
         }
     }
 
@@ -90,8 +93,8 @@ class MainActivity : AppCompatActivity() {
      */
     private fun setMask(mask: String) {
         val formatter = MaskedFormatter(mask)
-        mEdtMasked.addTextChangedListener(InputTypeSwitcher(mEdtMasked, mImageView, ::noMask))
-        mEdtMasked.addTextChangedListener(MaskedWatcher(formatter, mEdtMasked, ::noMask))
+        mTvPhone.addTextChangedListener(InputTypeSwitcher(mTvPhone, mImageView, ::noMask))
+        mTvPhone.addTextChangedListener(MaskedWatcher(formatter, mTvPhone, ::noMask))
         val s = formatter.formatString(mEdtMasked.text.toString()).unMaskedString
     }
 
